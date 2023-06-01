@@ -117,3 +117,62 @@ Pruebas de software                                                 Mocks
        -  ...
 
 Cualquier prueba debe probar UNA SOLA COSA
+
+----
+
+Microservicios es insufiente
+
+Componentes desacoplados de software
+
+
+----
+
+Libreria Java que hace un tipo de análisis concreto
+
+
+---
+AngulaJS
+  modulos
+    componentes
+          ^
+Angular   ^
+    app   ^
+        modulos 
+
+
+Proyectos angular  diferentes
+
+
+---
+
+version:   a.b.c
+                        INCREMENTAN
+a: MAJOR                Cuando hago un cambio que no respeta retro-compatibilidad
+                            Quito una función
+                            Refactorización heavy
+                                Quitar funciones (las he renombrado)
+b: MINOR                Incrementa con nueva funcionalidad
+                        Si marco funcionalidad como obsoleta @Deprecated
+                            + adicionalmente puede ser que vengan bugs corregidos.
+c: PATCH                Solo incrementa con arreglo de bugs
+
+Servicio A
+Y lo publico !
+                1.1.0
+Microservicio A 1.2.1             <           Microservicio B (Pensando que ataco a la versión 1.2.0)
+                                              Frontal JS      (Pensando que ataco a la versión 2.2.0)
+
+Microservicio A 2.2.0
+
+/api/v1/facturas
+/api/v2/facturas
+
+
+
+maven
+
+    proyecto GORDO
+        dependencias 
+            MODULO 1 v1.1.0 -> jar -> Artifactory
+            MODULO 2
+            MODULO 3
